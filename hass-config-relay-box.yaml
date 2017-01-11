@@ -1,0 +1,14 @@
+# Configuração no arquivo configuration.yml
+# Considerando os valores padrões do código que eu publiquei
+# Conecta no broker mqtt instalado no Raspberry pi
+mqtt:
+  broker: 127.0.0.1
+  port: 1883
+  client_id: home-assistant-1
+  keepalive: 60
+# Configura um interruptor mqtt, com os tópicos de comando e estado
+switch:
+  - platform: mqtt
+    name: "Ventilador"
+    command_topic: "living/fan1/switch"
+    state_topic: "living/fan1/status"
